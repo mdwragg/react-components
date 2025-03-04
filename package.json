@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lit": "^3.2.1",
     "react": "^19.0.0"
   }
 }
