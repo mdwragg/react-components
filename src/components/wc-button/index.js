@@ -1,22 +1,21 @@
-// import {LitElement, html, css} from 'lit';
-// import {customElement, property} from 'lit/decorators.js';
+"use client"
 
-// // Registers the element
-// @customElement('my-element')
-// export class MyElement extends LitElement {
-//   // Styles are applied to the shadow root and scoped to this element
-//   static styles = css`
-//     span {
-//       color: green;
-//     }
-//   `;
+import { LitElement, html } from 'lit';
+  
+export class WcButton extends LitElement {
+  static properties = {
+    disabled: { type: Boolean },
+  };
 
-//   // Creates a reactive property that triggers rendering
-//   @property()
-//   mood = 'great';
+  render() {
+    return html`<button ?disabled=${this.disabled}>Click me</button>`;
+  }
+}
 
-//   // Render the component's DOM by returning a Lit template
-//   render() {
-//     return html`Web Components are <span>${this.mood}</span>!`;
-//   }
-// }
+customElements.define('wc-button', WcButton);
+
+// export const WcButton = createComponent({
+//     react: React,
+//     tagName: 'wc-button',
+//     elementClass: WcButtonClass,
+// });
